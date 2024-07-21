@@ -1,0 +1,21 @@
+/* Resetting margin and padding for body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Ensure no scrollbars appear */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Light background color */
+}
+
+/* Styling the iframe */
+.frame {
+  margin-top: 20px;
+  height: 90vh; /* 90% of the viewport height */
+  width: 90vw; /* 90% of the viewport width */
+  border: none; /* Remove default border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better appearance */
+  background-color: #ffffff; /* White background for iframe content */
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stream.css" />
+  </head>
+  <body>
+    <iframe
+      id="myIframe"
+      class="frame"
+      frameborder="0"
+      height="100%"
+      width="100%"
+      src="https://givemereddit.eu/f1/formulaone.html"
+      allowfullscreen
+      scrolling="no"
+      allowtransparency
+      sandbox="allow-scripts allow-same-origin"
+    ></iframe>
+
+    <script>
+      document.getElementById("myIframe").addEventListener("load", function () {
+        var iframe = this;
+        var iframeWindow = iframe.contentWindow;
+
+        try {
+          // Intercept the beforeunload event to prevent redirects
+          iframeWindow.onbeforeunload = function (event) {
+            console.log("Prevented redirect");
+            event.preventDefault();
+            event.returnValue = "";
+          };
+        } catch (error) {
+          console.error("Error intercepting iframe events:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
